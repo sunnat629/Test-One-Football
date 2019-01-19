@@ -10,7 +10,7 @@ public class PushRepositoryImpl implements PushRepository
     public void setTeamPush(long teamId, String name, int pushOptions)
     {
         PushItem item = new PushItem();
-        item.setPushItemType(PushItem.TYPE_TEAM_PUSH);
+        item.setPushItemType(PushItem.Companion.getTYPE_TEAM_PUSH());
         item.setPushItemId(teamId);
         item.setPushItemName(name);
         item.setPushOption(String.valueOf(pushOptions));

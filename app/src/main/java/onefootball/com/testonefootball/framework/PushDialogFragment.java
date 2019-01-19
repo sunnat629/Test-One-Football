@@ -225,7 +225,7 @@ public class PushDialogFragment extends BottomSheetDialogFragment implements Pus
             switch (pushType)
             {
                 case TEAM:
-                    pushEntry = new PushItem(0L, pushId, PushItem.TYPE_TEAM_PUSH, pushName, String.valueOf(-1));
+                    pushEntry = new PushItem(0L, pushId, PushItem.Companion.getTYPE_TEAM_PUSH(), pushName, String.valueOf(-1));
                     break;
             }
 
