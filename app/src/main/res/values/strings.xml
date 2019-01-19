@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TestOnefootball</string>
+    <string name="done">Done</string>
+    <!-- Dialogs/Push -->
+    <string name="dialog_push_title">Push notifications</string>
+    <!-- Dialogs/Push/Options -->
+    <string name="dialog_push_option_all">All events</string>
+    <string name="dialog_push_option_goals">Goals</string>
+    <string name="dialog_push_option_start_stop">Kick-off / Full Time</string>
+    <string name="dialog_push_option_facts">Match facts</string>
+    <string name="dialog_push_option_red_cards">Red cards</string>
+    <string name="dialog_push_option_transfers">Transfers</string>
+    <string name="dialog_push_option_news">News</string>
+    <string name="task_description">Push the bell icon in Toolbar.</string>
+</resources>
