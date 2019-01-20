@@ -1,4 +1,4 @@
-//package onefootball.com.testonefootball.framework;
+package onefootball.com.testonefootball.ui.fragments;//package onefootball.com.testonefootball.framework;
 //
 //import android.app.Dialog;
 //import android.content.Context;
@@ -23,7 +23,7 @@
 //
 //import onefootball.com.testonefootball.R;
 //import onefootball.com.testonefootball.data.PushEventType;
-//import onefootball.com.testonefootball.data.PushRepository;
+//import onefootball.com.testonefootball.data.repositories.PushRepository;
 //import onefootball.com.testonefootball.data.model.PushItem;
 //import onefootball.com.testonefootball.ui.adapter.PushOptionAdapter;
 //

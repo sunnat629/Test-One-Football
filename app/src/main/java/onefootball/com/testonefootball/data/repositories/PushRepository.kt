@@ -1,4 +1,4 @@
-package onefootball.com.testonefootball.data
+package onefootball.com.testonefootball.data.repositories
 
 import onefootball.com.testonefootball.data.model.PushItem
 

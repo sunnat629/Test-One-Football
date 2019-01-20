@@ -31,6 +31,7 @@ While completing the code challenge keep in mind:
 
 ## Done Task
 * converted and modified all files into Kotlin
+* Rearranges the files in relevant `sub-packages`
 * Reduced boilerplate code
 * Isolated the the encode-decode functions in an `Object Declaration`
 * Refactored the `data` packages

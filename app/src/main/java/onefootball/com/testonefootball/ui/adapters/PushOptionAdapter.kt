@@ -1,4 +1,4 @@
-package onefootball.com.testonefootball.ui.adapter
+package onefootball.com.testonefootball.ui.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import android.widget.CheckedTextView
 import android.widget.ListView
 import onefootball.com.testonefootball.R
 import onefootball.com.testonefootball.data.PushEventType
-import onefootball.com.testonefootball.ui.adapter.PushOptionAdapter.PushOptionItem
+import onefootball.com.testonefootball.ui.adapters.PushOptionAdapter.PushOptionItem
 
 class PushOptionAdapter(context: Context, selectedPushOptions: List<PushOptionItem>) :
         ArrayAdapter<PushOptionItem>(context, R.layout.list_item_push, selectedPushOptions) {

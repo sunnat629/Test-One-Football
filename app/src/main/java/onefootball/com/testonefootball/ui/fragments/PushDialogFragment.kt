@@ -1,4 +1,4 @@
-package onefootball.com.testonefootball.framework
+package onefootball.com.testonefootball.ui.fragments
 
 import android.app.Dialog
 import android.content.Context
@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.support.design.widget.BottomSheetBehavior
 import android.support.design.widget.BottomSheetDialog
 import android.support.design.widget.BottomSheetDialogFragment
-import android.util.SparseBooleanArray
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -21,9 +20,13 @@ import java.util.EnumSet
 import onefootball.com.testonefootball.R
 import onefootball.com.testonefootball.data.PushEvent
 import onefootball.com.testonefootball.data.PushEventType
-import onefootball.com.testonefootball.data.PushRepository
+import onefootball.com.testonefootball.data.repositories.PushRepository
 import onefootball.com.testonefootball.data.model.PushItem
-import onefootball.com.testonefootball.ui.adapter.PushOptionAdapter
+import onefootball.com.testonefootball.ui.enums.PushRegistrationCategory
+import onefootball.com.testonefootball.ui.adapters.PushOptionAdapter
+import onefootball.com.testonefootball.ui.interfaces.DialogCancelListener
+import onefootball.com.testonefootball.ui.interfaces.DialogDismissListener
+import onefootball.com.testonefootball.ui.interfaces.PushDialogActionListener
 
 class PushDialogFragment : BottomSheetDialogFragment() {
 

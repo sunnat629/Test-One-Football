@@ -2,7 +2,7 @@ package onefootball.com.testonefootball
 
 import android.view.Menu
 import android.widget.TextView
-import onefootball.com.testonefootball.framework.MainActivity
+import onefootball.com.testonefootball.ui.MainActivity
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test

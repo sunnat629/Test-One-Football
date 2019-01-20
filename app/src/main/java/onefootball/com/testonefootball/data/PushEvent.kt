@@ -1,6 +1,6 @@
 package onefootball.com.testonefootball.data
 
-import onefootball.com.testonefootball.framework.PushRegistrationCategory
+import onefootball.com.testonefootball.ui.enums.PushRegistrationCategory
 import java.util.*
 
 object PushEvent {

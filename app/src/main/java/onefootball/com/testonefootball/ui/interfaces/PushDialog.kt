@@ -1,4 +1,4 @@
-package onefootball.com.testonefootball.framework
+package onefootball.com.testonefootball.ui.interfaces
 
 interface PushDialog {
     companion object {

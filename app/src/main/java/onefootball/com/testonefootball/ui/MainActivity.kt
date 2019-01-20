@@ -1,4 +1,4 @@
-package onefootball.com.testonefootball.framework
+package onefootball.com.testonefootball.ui
 
 import android.os.Bundle
 import android.support.v4.app.FragmentManager
@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import onefootball.com.testonefootball.R
-import onefootball.com.testonefootball.data.PushRepositoryImpl
+import onefootball.com.testonefootball.data.repositories.PushRepositoryImpl
 import onefootball.com.testonefootball.data.model.Team
+import onefootball.com.testonefootball.ui.fragments.PushDialogFragment
+import onefootball.com.testonefootball.ui.interfaces.PushDialog
 
 open class MainActivity : AppCompatActivity() {
     private lateinit var team: Team

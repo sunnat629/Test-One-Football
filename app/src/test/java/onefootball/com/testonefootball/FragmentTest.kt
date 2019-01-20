@@ -2,9 +2,9 @@ package onefootball.com.testonefootball
 
 import android.support.design.widget.BottomSheetDialogFragment
 import android.support.v7.app.AppCompatActivity
-import onefootball.com.testonefootball.data.PushRepositoryImpl
+import onefootball.com.testonefootball.data.repositories.PushRepositoryImpl
 import onefootball.com.testonefootball.data.model.Team
-import onefootball.com.testonefootball.framework.PushDialogFragment
+import onefootball.com.testonefootball.ui.fragments.PushDialogFragment
 import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Test

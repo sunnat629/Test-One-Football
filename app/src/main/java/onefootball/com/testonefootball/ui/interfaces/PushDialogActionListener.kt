@@ -1,4 +1,4 @@
-package onefootball.com.testonefootball.framework
+package onefootball.com.testonefootball.ui.interfaces
 
 import android.support.v4.app.DialogFragment
 
