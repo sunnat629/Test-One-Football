@@ -44,8 +44,6 @@ dependencies {
     // implement robolectric for Unit testing
     testImplementation "org.robolectric:robolectric:$robolectric_version"
     testImplementation "org.robolectric:shadows-supportv4:$robolectric_version"
-
-    debugImplementation 'androidx.fragment:fragment-testing:1.1.0-alpha03'
 }
 repositories {
     mavenCentral()

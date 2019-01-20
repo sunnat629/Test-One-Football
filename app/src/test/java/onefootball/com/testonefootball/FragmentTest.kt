@@ -22,6 +22,7 @@ class FragmentTest {
         val team= Team(1, "Arsenal")
         val pushRepository = PushRepositoryImpl()
         fragment = PushDialogFragment.newInstanceTeam(team.id, team.name, pushRepository)
+        startFragment(fragment, AppCompatActivity::class.java)
         startVisibleFragment(fragment)
     }
 
@@ -29,7 +30,6 @@ class FragmentTest {
     @Test
     @Throws(Exception::class)
     fun shouldNotBeNull() {
-        startFragment(fragment, AppCompatActivity::class.java)
         assertNotNull(fragment)
     }
 }

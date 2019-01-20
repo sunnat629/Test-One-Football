@@ -32,7 +32,7 @@ class PushOptionAdapter(context: Context, selectedPushOptions: List<PushOptionIt
         }
 
         holder.pushOptionCheckedTextView!!.text = item!!.name
-        holder.pushOptionCheckedTextView!!.setCompoundDrawablesWithIntrinsicBounds(item.drawable!!, 0, 0, 0)
+        holder.pushOptionCheckedTextView!!.setCompoundDrawablesWithIntrinsicBounds(item.drawable, 0, 0, 0)
 
         val listView = parent as ListView
         holder.pushOptionCheckedTextView!!.isChecked = listView.isItemChecked(position)
