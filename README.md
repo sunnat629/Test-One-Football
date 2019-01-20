@@ -34,7 +34,7 @@ While completing the code challenge keep in mind:
 * Reduced boilerplate code
 * Refactored the `data` packages
 * Modified Layouts
-* added strings in string.xml and dimen.xml
+* added strings in `string.xml` and `dimen.xml`
 * removed all the warnings and errors during building the project
 * added 6 unit testing using Robolectric
 * added this picture as the comparison between previous and current code
