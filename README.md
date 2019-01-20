@@ -32,8 +32,8 @@ While completing the code challenge keep in mind:
 ## Done Task
 * converted and modified all files into Kotlin
 * Reduce boilerplate code
-* Refactor the 'data' packages
-* Modifying Layouts
+* Refactored the 'data' packages
+* Modified Layouts
 * added strings in string.xml and dimen.xml
 * removed all the warnings and errors during building the project
 * added 6 unit testing using Robolectric
