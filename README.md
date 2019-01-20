@@ -30,7 +30,7 @@ While completing the code challenge keep in mind:
 ----------------------------------------------------------------------
 
 ## Done Task
-* convert and modified all files into Kotlin
+* converted and modified all files into Kotlin
 * Reduce boilerplate code
 * Refactor the 'data' packages
 * Modifying Layouts
