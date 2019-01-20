@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="onefootball.com.testonefootball.FragmentTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-01-20T08:30:33" hostname="Mohis-iMac.local" time="6.832">
+  <properties/>
+  <testcase name="textViewNullChecking" classname="onefootball.com.testonefootball.FragmentTest" time="6.663"/>
+  <testcase name="textViewStringChecking" classname="onefootball.com.testonefootball.FragmentTest" time="0.169"/>
+  <system-out><![CDATA[[Robolectric] onefootball.com.testonefootball.FragmentTest.textViewNullChecking: sdk=28; resources=legacy
+[Robolectric] NOTICE: legacy resources mode is deprecated; see http://robolectric.org/migrating/#migrating-to-40
+[Robolectric] onefootball.com.testonefootball.FragmentTest.textViewStringChecking: sdk=28; resources=legacy
+[Robolectric] NOTICE: legacy resources mode is deprecated; see http://robolectric.org/migrating/#migrating-to-40
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

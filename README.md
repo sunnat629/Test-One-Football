@@ -24,3 +24,23 @@ While completing the code challenge keep in mind:
 * Do not spend too much time on details
 * Leave some `TODO` to let us know in detail what you'd have done if there was more time
 * Please send us the project as a zip file or as link to a repository
+
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+## Done Task
+* convert all files into Kotlin
+* Reduce boilerplate code
+* Refactor the 'data' packages
+* Modifying Layouts
+* added strings in string.xml and dimen.xml
+* removed all the warnings and errors during building the project
+* added 6 unit testing using Robolectric
+* added this picture as the comparison between previous and current code
+![Alt-Text](/codeLines.jpg)
+
+## TODO Task
+* modify the fragment class
+* implement the Android Architecture Components
+* implement the Espresso for UI testing

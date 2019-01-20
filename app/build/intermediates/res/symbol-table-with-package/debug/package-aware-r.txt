@@ -900,6 +900,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen padding_checkbox
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -1095,6 +1096,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id displayText
 id divider
 id edit_query
 id end
@@ -1315,6 +1317,7 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu menu_team
 mipmap ic_launcher
+mipmap ic_launcher_old
 mipmap ic_launcher_round
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -1357,6 +1360,7 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
 string appbar_scrolling_view_behavior
+string arsenal
 string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_pattern
@@ -1378,9 +1382,11 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string push_notifications
 string search_menu_title
 string status_bar_notification_info_overflow
 string task_description
+string team_push
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

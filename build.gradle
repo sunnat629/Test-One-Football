@@ -2,6 +2,7 @@
 
 buildscript {
     ext.kotlin_version = '1.3.11'
+    ext.robolectric_version = '4.1'
 
     repositories {
         google()
