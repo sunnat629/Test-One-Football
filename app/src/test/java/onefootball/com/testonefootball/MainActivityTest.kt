@@ -19,7 +19,7 @@ class MainActivityTest {
     private lateinit var activity: MainActivity
     private lateinit var shadowActivity: ShadowActivity
     /**
-     * @Before will initialize only one time at the beginning
+     * @Before will call before the @Test execute
      * */
     @Before
     fun initMainActivity(){
@@ -30,12 +30,14 @@ class MainActivityTest {
 
     // Is TestView null or not?
     @Test
+    @Throws(Exception::class)
     fun textViewNullChecking(){
         val textView = activity.findViewById(R.id.displayText) as TextView
         assertNotNull("TextView is null", textView)
     }
     // TestView string check
     @Test
+    @Throws(Exception::class)
     fun textViewStringChecking(){
         val textView = activity.findViewById(R.id.displayText) as TextView
         assertTrue("TextView contains incorrect text",
@@ -44,6 +46,7 @@ class MainActivityTest {
 
     // MenuItem click check
     @Test
+    @Throws(Exception::class)
     fun menuItemNullChecking(){
         val menu: Menu = shadowActivity.optionsMenu
         // to check null
@@ -56,6 +59,7 @@ class MainActivityTest {
 
     // MenuItem click check
     @Test
+    @Throws(Exception::class)
     fun menuItemClickChecking(){
         val menu: Menu = shadowActivity.optionsMenu
         assertTrue("Menu Item contains incorrect title",

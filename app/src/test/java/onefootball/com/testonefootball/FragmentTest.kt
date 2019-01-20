@@ -17,6 +17,9 @@ import org.robolectric.shadows.support.v4.SupportFragmentTestUtil.startVisibleFr
 class FragmentTest {
     private lateinit var fragment: BottomSheetDialogFragment
 
+    /**
+     * @Before will call before the @Test execute
+     * */
     @Before
     fun setFragment(){
         val team= Team(1, "Arsenal")
