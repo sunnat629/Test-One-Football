@@ -31,7 +31,7 @@ While completing the code challenge keep in mind:
 
 ## Done Task
 * converted and modified all files into Kotlin
-* Reduce boilerplate code
+* Reduced boilerplate code
 * Refactored the 'data' packages
 * Modified Layouts
 * added strings in string.xml and dimen.xml
