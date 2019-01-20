@@ -57,8 +57,8 @@ class PushOptionAdapter(context: Context, selectedPushOptions: List<PushOptionIt
 
 
     class PushOptionItem(stringResource: String, pushDrawable: Int, option: PushEventType) {
-        val name: String? = stringResource
-        val drawable: Int? = pushDrawable
-        val pushOption: PushEventType? = option
+        val name: String = stringResource
+        val drawable: Int = pushDrawable
+        val pushOption: PushEventType = option
     }
 }

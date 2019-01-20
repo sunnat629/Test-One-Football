@@ -32,15 +32,16 @@ While completing the code challenge keep in mind:
 ## Done Task
 * converted and modified all files into Kotlin
 * Reduced boilerplate code
+* Isolated the the encode-decode functions in an `Object Declaration`
 * Refactored the `data` packages
-* Modified Layouts
-* added strings in `string.xml` and `dimen.xml`
-* removed all the warnings and errors during building the project
-* added 6 unit testing using Robolectric
-* added this picture as the comparison between previous and current code
-![Alt-Text](/codeLines.jpg)
+* Slightly modified Layouts
+* Added strings in `string.xml` and `dimen.xml`
+* Removed all the warnings and errors during building the project
+* Added 6 unit testing using `Robolectric`
+* Added the picture as the comparison between previous and current code
+![Alt-Text](/codeLines.png)
 
 ## TODO Task
-* modify the fragment class
-* implement the Android Architecture Components
-* implement the Espresso for UI testing
+* modify the `Fragment` class
+* implement the `Android Architecture Components`
+* implement the `Espresso` for UI testing

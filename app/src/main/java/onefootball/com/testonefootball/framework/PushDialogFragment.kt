@@ -19,6 +19,7 @@ import java.util.ArrayList
 import java.util.EnumSet
 
 import onefootball.com.testonefootball.R
+import onefootball.com.testonefootball.data.PushEvent
 import onefootball.com.testonefootball.data.PushEventType
 import onefootball.com.testonefootball.data.PushRepository
 import onefootball.com.testonefootball.data.model.PushItem
@@ -33,8 +34,8 @@ class PushDialogFragment : BottomSheetDialogFragment() {
     private var selectedPushOption: Int = 0
     private var maxSelectableItems: Int = 0
 
-    private var pushDialog: View? = null
-    private var listView: ListView? = null
+    private lateinit var pushDialog: View
+    private lateinit var listView: ListView
 
     private lateinit var pushRepository: PushRepository
 
@@ -50,8 +51,8 @@ class PushDialogFragment : BottomSheetDialogFragment() {
     private val selectedPushOptionsAsInt: Int
         get() {
             val selectedPushOptions = EnumSet.noneOf(PushEventType::class.java)
-            val adapter = listView!!.adapter as PushOptionAdapter
-            val selectedItems = listView!!.checkedItemPositions
+            val adapter = listView.adapter as PushOptionAdapter
+            val selectedItems = listView.checkedItemPositions
 
             val count = selectedItems.size()
             for (i in 0 until count) {
@@ -60,7 +61,7 @@ class PushDialogFragment : BottomSheetDialogFragment() {
                 }
             }
 
-            return PushEventType.encode(selectedPushOptions)
+            return PushEvent.encode(selectedPushOptions)
         }
 
     private fun setPushRepository(repository: PushRepository) {
@@ -103,10 +104,11 @@ class PushDialogFragment : BottomSheetDialogFragment() {
         initListView()
 
         val adapter = PushOptionAdapter(activity!!, buildPushOptions())
-        listView!!.adapter = adapter
+        listView.adapter = adapter
 
         // minus 1 because "Select all" should not be counted
         maxSelectableItems = adapter.count - 1
+
         // set selected items
         setUserSelectedPushesToDialog(adapter)
 
@@ -128,33 +130,32 @@ class PushDialogFragment : BottomSheetDialogFragment() {
     }
 
     private fun initListView() {
-        listView = pushDialog!!.findViewById(R.id.list_view)
-        listView!!.dividerHeight = 0
-        listView!!.choiceMode = ListView.CHOICE_MODE_MULTIPLE
+        listView = pushDialog.findViewById(R.id.list_view)
+        listView.dividerHeight = 0
+        listView.choiceMode = ListView.CHOICE_MODE_MULTIPLE
 
-        listView!!.setOnItemClickListener { parent, _, position, _ ->
+        listView.setOnItemClickListener { parent, _, position, _ ->
             val item = parent.getItemAtPosition(position) as PushOptionAdapter.PushOptionItem
-            val isPushOptionAll = item.pushOption!!.isPushOption(PushEventType.ALL)
-            val isSelected = listView!!.isItemChecked(position)
+            val isPushOptionAll = item.pushOption.isPushOption(PushEventType.ALL)
+            val isSelected = listView.isItemChecked(position)
 
             if (isPushOptionAll) {
                 setAllCheckBoxes(isSelected)
             }
 
-            if (isSelected && listView!!.checkedItemCount == maxSelectableItems) {
+            if (isSelected && listView.checkedItemCount == maxSelectableItems) {
                 setAllCheckBoxes(true)
             }
 
-            if (!isSelected && listView!!.checkedItemCount == maxSelectableItems) {
-                listView!!.setItemChecked(0, false)
+            if (!isSelected && listView.checkedItemCount == maxSelectableItems) {
+                listView.setItemChecked(0, false)
             }
-            listView!!.invalidateViews()
+            listView.invalidateViews()
         }
     }
 
     private fun setupPrimaryButton(dialog: Dialog) {
         val primaryButton = dialog.findViewById<Button>(R.id.button_primary)
-
         primaryButton.setOnClickListener {
             setPushOptions()
             initPushDialogPositiveClick()
@@ -179,22 +180,18 @@ class PushDialogFragment : BottomSheetDialogFragment() {
 
     private fun retrieveAndSetPreviousPushOptions(adapter: PushOptionAdapter) {
         var pushEntry = pushEntry
-
         // create new one if it is null
         if (pushEntry == null) {
             when (pushType) {
                 PushRegistrationCategory.TEAM -> pushEntry = PushItem(0L, pushId, PushItem.TYPE_TEAM_PUSH, pushName!!, (-1).toString())
             }
-
         }
-
         selectedPushOption = Integer.parseInt(pushEntry!!.pushOption!!)
-
         setPushOptions(adapter, selectedPushOption)
     }
 
     private fun setPushOptions(adapter: PushOptionAdapter, pushOption: Int) {
-        val selectedPushOptions = PushEventType.decode(pushOption, pushType!!)
+        val selectedPushOptions = PushEvent.decode(pushOption, pushType!!)
         setSelectedCheckBoxes(selectedPushOptions, adapter)
     }
 
@@ -205,19 +202,19 @@ class PushDialogFragment : BottomSheetDialogFragment() {
 
         for (position in 0 until adapter.count) {
             if (pushOptions.contains(adapter.getItem(position)!!.pushOption)) {
-                listView!!.setItemChecked(position, true)
+                listView.setItemChecked(position, true)
             }
         }
     }
 
     private fun setAllCheckBoxes(enableCheckBoxes: Boolean) {
         if (enableCheckBoxes) {
-            val count = listView!!.count
+            val count = listView.count
             for (position in 0 until count) {
-                listView!!.setItemChecked(position, true)
+                listView.setItemChecked(position, true)
             }
         } else {
-            listView!!.clearChoices()
+            listView.clearChoices()
         }
     }
 
@@ -233,7 +230,7 @@ class PushDialogFragment : BottomSheetDialogFragment() {
     private fun buildPushOptions(): List<PushOptionAdapter.PushOptionItem> {
         var availablePushOptions: Set<PushEventType>? = null
         when (pushType) {
-            PushRegistrationCategory.TEAM -> availablePushOptions = PushEventType.SUPPORTED_TEAM_PUSH_OPTIONS
+            PushRegistrationCategory.TEAM -> availablePushOptions = PushEvent.SUPPORTED_TEAM_PUSH_OPTIONS
         }
 
         //        Log.wtf("******", availablePushOptions.toString());
@@ -271,7 +268,7 @@ class PushDialogFragment : BottomSheetDialogFragment() {
             PushEventType.REDCARD -> return getString(R.string.dialog_push_option_red_cards)
             PushEventType.GOAL -> return getString(R.string.dialog_push_option_goals)
             PushEventType.STARTSTOP -> return getString(R.string.dialog_push_option_start_stop)
-//            PushEventType.NEWS -> return getString(R.string.dialog_push_option_news)
+            PushEventType.NEWS -> return getString(R.string.dialog_push_option_news)
             else -> return ""
         }
     }
@@ -283,8 +280,8 @@ class PushDialogFragment : BottomSheetDialogFragment() {
             PushEventType.REDCARD -> return R.drawable.ic_push_match_event_red_card
             PushEventType.GOAL -> return R.drawable.ic_push_match_event_goal
             PushEventType.STARTSTOP -> return R.drawable.ic_push_default_coming_soon
-//            PushEventType.LINEUP -> return R.drawable.ic_push_shirt
-//            PushEventType.NEWS -> return R.drawable.ic_push_list_black_24_px
+            PushEventType.LINEUP -> return R.drawable.ic_push_shirt
+            PushEventType.NEWS -> return R.drawable.ic_push_list_black_24_px
             else -> return 0
         }
     }
